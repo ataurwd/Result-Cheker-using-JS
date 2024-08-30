@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Check</title>
+    <style>
+        .div{
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            /* border: 1px solid #ccc;
+            box-shadow: 0 0 5px #ccc; */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="div">
+    <h1>Check Result</h1>
+    <input type="text" name="" id="inputBox">
+    <button id="btn">Check</button>
+    <h3 id="showResult"></h3>
+</div>
+    <script>
+        // get btn and input box id
+        const inputBox = document.getElementById('inputBox');
+        const btn = document.getElementById('btn');
+        const showResult = document.getElementById('showResult');
+
+        // add event listener to check button click
+        btn.addEventListener('click', () => {
+            // acess input value
+            const inputValue = inputBox.value;
+            // convert string to number
+            const number = Number(inputValue)
+            // add condition as per your requirements
+            if(number >= 80 && number <= 100){
+                showResult.textContent = "You Got: A+"
+            }
+            else if(number >= 70 && number <= 79 ){
+                showResult.textContent = "You Got: A"
+            }
+            else if(number >= 60 && number <= 69 ){
+                showResult.textContent = "You Got: A-"
+            }
+            else if(number >= 50 && number <= 59 ){
+                showResult.textContent = "You Got: B"
+            }
+            else if(number >= 40 && number <= 49 ){
+                showResult.textContent = "You Got: C+"
+            }
+            else if(number >= 33 && number <= 39 ){
+                showResult.textContent = "You Got: C"
+            }
+            else{
+                showResult.textContent = "F"
+            }
+        })
+    </script>
+</body>
+</html>
